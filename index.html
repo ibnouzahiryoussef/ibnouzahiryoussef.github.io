@@ -6,21 +6,24 @@
 
   <meta name="google-site-verification" content="CRF1Neyq0c4UQVn2WwNIFYU0VfeaLZkuF6cg0Cy0MUw" />
   <style>
-html, body {
+html {
   height: 100%;
+  background: linear-gradient(to bottom, #f4f7fb, #e8f1fb);
 }
 
 body {
   max-width: 760px;
-  margin: 0 auto; /* 🔥 enlève le margin-top */
-  padding: 70px 0; /* 🔥 remplace margin par padding */
+  margin: 0 auto; /* 🔥 plus de margin vertical */
+  padding: 60px 20px; /* 🔥 espace interne propre */
+
+  min-height: 100vh; /* 🔥 prend toute la hauteur écran */
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 17px;
   line-height: 1.7;
   color: #1a1a1a;
 
-  background: linear-gradient(to bottom, #f4f7fb, #e8f1fb);
+  background: transparent; /* 🔥 évite double fond */
 }
 
 /* liens */
