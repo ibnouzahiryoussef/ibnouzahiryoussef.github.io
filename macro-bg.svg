@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="none"/>
+
+  <g stroke="#2a6fa1" stroke-width="2" fill="none" opacity="0.35">
+    <path d="M35 180 C80 35, 170 40, 230 170"/>
+    <path d="M35 430 L215 260"/>
+    <path d="M35 260 L215 430"/>
+    <path d="M35 700 C100 540, 200 540, 245 680"/>
+    <path d="M35 700 C120 840, 210 830, 250 700"/>
+    <path d="M1260 760 C1310 650, 1430 660, 1480 750"/>
+    <path d="M1260 760 C1330 850, 1440 830, 1490 760"/>
+  </g>
+
+  <g fill="#2a6fa1" opacity="0.25" font-family="Georgia" font-size="24">
+    <text x="70" y="60">Phillips Curve</text>
+    <text x="55" y="250">πₜ = βEₜπₜ₊₁ + κxₜ</text>
+    <text x="70" y="520">IS–LM Model</text>
+    <text x="55" y="760">AD–AS Model</text>
+    <text x="1180" y="150">Central Banking</text>
+    <text x="1180" y="190">Price Stability</text>
+    <text x="1180" y="225">Financial Stability</text>
+    <text x="1180" y="260">Monetary Policy</text>
+    <text x="1160" y="470">Money Demand</text>
+    <text x="1160" y="510">M / P = L(i, Y)</text>
+    <text x="1080" y="620">Taylor Rule</text>
+    <text x="1080" y="660">iₜ = r* + πₜ + φπ(πₜ − π*)</text>
+    <text x="980" y="900">New Keynesian Phillips Curve</text>
+    <text x="980" y="940">πₜ = βEₜπₜ₊₁ + κxₜ</text>
+  </g>
+
+  <g opacity="0.18" fill="#2a6fa1">
+    <circle cx="530" cy="180" r="4"/>
+    <circle cx="555" cy="190" r="4"/>
+    <circle cx="580" cy="200" r="4"/>
+    <circle cx="610" cy="210" r="4"/>
+    <circle cx="640" cy="220" r="4"/>
+    <circle cx="670" cy="230" r="4"/>
+    <circle cx="700" cy="240" r="4"/>
+    <circle cx="730" cy="250" r="4"/>
+    <circle cx="760" cy="260" r="4"/>
+    <circle cx="790" cy="270" r="4"/>
+    <circle cx="820" cy="280" r="4"/>
+    <circle cx="850" cy="290" r="4"/>
+    <circle cx="880" cy="300" r="4"/>
+    <circle cx="910" cy="310" r="4"/>
+    <circle cx="940" cy="320" r="4"/>
+    <circle cx="970" cy="330" r="4"/>
+    <circle cx="1000" cy="340" r="4"/>
+    <circle cx="1030" cy="350" r="4"/>
+  </g>
+</svg>
