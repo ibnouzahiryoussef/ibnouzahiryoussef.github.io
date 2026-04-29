@@ -90,21 +90,31 @@ nav {
 
 nav a {
   margin-right: 12px;
-  padding: 6px 12px;
+  padding: 7px 14px;
   border-radius: 6px;
 
   border: 1.5px solid #0b3c6f;
   background-color: #e8f1fb;
-
   color: #0b3c6f;
+
   font-weight: 600;
+  text-decoration: none;
+
+  display: inline-block;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 5px rgba(11, 60, 111, 0.15);
 }
 
 nav a:hover {
   background-color: #0b3c6f;
   color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(11, 60, 111, 0.25);
 }
 
+nav a:active {
+  transform: translateY(-1px);
+}
 /* titres sections */
 h2 {
   margin-top: 40px;
