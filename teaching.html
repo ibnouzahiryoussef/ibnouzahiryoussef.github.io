@@ -4,15 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teaching — Ibnouzahir Youssef</title>
-
-<!-- 🔥 EXACTEMENT LES MÊMES FONTS -->
+<meta name="description" content="Teaching page of Ibnouzahir Youssef — undergraduate courses in macroeconomics and monetary economics.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-
-/* 🔥 EXACTEMENT LE MÊME CSS QUE RESEARCH */
 :root {
   --navy:  #0b2d4e;
   --mid:   #1a5276;
@@ -27,145 +24,466 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { min-height: 100%; }
 
 body {
   font-family: var(--sans);
-  background: var(--paper);
+  font-size: 16px;
+  line-height: 1.75;
   color: var(--text);
+  background: var(--paper);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* background grid */
 body::before {
-  content:"";
-  position:fixed;
-  inset:0;
+  content: "";
+  position: fixed;
+  inset: 0;
   background-image:
     linear-gradient(rgba(11,45,78,0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(11,45,78,0.04) 1px, transparent 1px);
-  background-size:60px 60px;
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* layout */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 10%, rgba(46,134,193,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 90% 85%, rgba(11,45,78,0.04) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-equations {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.eq {
+  position: absolute;
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(11,45,78,0.04);
+  white-space: nowrap;
+  animation: floatEq 28s ease-in-out infinite;
+  user-select: none;
+}
+.eq:nth-child(1) { top: 8%;  left: 3%;  font-size: 18px; animation-delay: 0s;   animation-duration: 30s; }
+.eq:nth-child(2) { top: 22%; right: 4%; font-size: 15px; animation-delay: -8s;  animation-duration: 25s; }
+.eq:nth-child(3) { top: 55%; left: 2%;  font-size: 14px; animation-delay: -14s; animation-duration: 32s; }
+.eq:nth-child(4) { top: 75%; right: 3%; font-size: 17px; animation-delay: -5s;  animation-duration: 27s; }
+.eq:nth-child(5) { top: 40%; left: 60%; font-size: 13px; animation-delay: -18s; animation-duration: 22s; }
+.eq:nth-child(6) { top: 88%; left: 20%; font-size: 16px; animation-delay: -10s; animation-duration: 35s; }
+@keyframes floatEq {
+  0%,100% { transform: translateY(0) translateX(0); }
+  33%      { transform: translateY(-14px) translateX(6px); }
+  66%      { transform: translateY(8px) translateX(-4px); }
+}
+
+/* ─── LAYOUT ─── */
 .page {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
-  margin: auto;
-  padding: 30px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
 }
 
-/* nav */
+/* ─── TOP NAV ─── */
 .topbar {
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0 0;
+  margin-bottom: 52px;
 }
 
 .topbar-name {
-  font-family:var(--serif);
-  color:var(--navy);
-  text-decoration:none;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: 0.2px;
 }
+.topbar-name span { color: var(--sky); }
+.topbar-name:hover { opacity: 0.8; }
 
-.topbar-name span {
-  color: var(--sky);
+.topbar-nav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
-
 .topbar-nav a {
-  margin-left:10px;
-  padding:6px 14px;
-  border-radius:20px;
-  text-decoration:none;
-  color:var(--mid);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--mid);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.topbar-nav a:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.topbar-nav a.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.topbar-nav a.cv-btn {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.topbar-nav a.cv-btn:hover {
+  background: var(--sky);
+  border-color: var(--sky);
 }
 
-.topbar-nav a:hover,
-.topbar-nav .active {
-  background:var(--navy);
-  color:white;
+/* ─── PAGE TITLE ─── */
+.page-header {
+  margin-bottom: 48px;
+  animation: fadeIn 0.9s ease both;
 }
 
-/* title */
+.page-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 8px;
+}
+
 .page-title {
-  font-family:var(--serif);
-  font-size:40px;
-  color:var(--navy);
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 0;
 }
 
 .page-rule {
-  height:2px;
-  background:linear-gradient(to right,var(--navy),var(--sky));
-  margin:10px 0 40px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--navy), var(--sky));
+  border-radius: 1px;
+  margin: 14px 0 0;
 }
 
-/* cards */
-.card {
-  background:white;
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:20px;
-  margin-bottom:15px;
-  transition:0.25s;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.card:hover {
-  transform:translateX(4px);
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+/* ─── SECTION ─── */
+.section {
+  margin-bottom: 52px;
+  animation: fadeIn 0.9s ease 0.1s both;
 }
 
-.card-title {
-  font-family:var(--serif);
-  font-size:18px;
-  color:var(--navy);
+.section-heading {
+  margin-bottom: 0;
 }
 
-.card-meta {
-  font-size:13px;
-  color:var(--muted);
-  margin-bottom:8px;
+.section-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.1px;
 }
 
-.card-desc {
-  color:var(--muted);
-  font-size:15px;
+.section-line {
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, var(--navy), var(--sky));
+  border-radius: 1px;
+  margin: 6px 0 24px 0;
 }
 
+/* ─── INTRO BOX ─── */
+.intro-box {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sky);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.intro-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 8px;
+}
+
+.intro-text {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* ─── COURSE CARDS ─── */
+.courses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.course-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 24px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.9s ease both;
+}
+
+.course-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--navy), var(--sky));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  border-color: rgba(46,134,193,0.3);
+  box-shadow: 0 4px 16px rgba(11,45,78,0.07);
+  transform: translateX(3px);
+}
+
+.course-card:hover::before { transform: scaleY(1); }
+
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.course-year {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--navy);
+  padding: 2px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+.course-level {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--ice);
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.course-role {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.course-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.course-description {
+  font-family: var(--serif);
+  font-size: 15.5px;
+  color: var(--muted);
+  line-height: 1.8;
+  text-align: justify;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+/* ─── INSTITUTION FOOTER ─── */
+.institution-note {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 24px;
+  padding: 14px;
+  border-top: 1px dashed var(--line);
+}
+
+.institution-note strong {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ─── FOOTER ─── */
+.site-footer {
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: var(--muted);
+  font-family: var(--sans);
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--navy); }
+
+@media (max-width: 580px) {
+  .topbar { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .page-title { font-size: 32px; }
+  .site-footer { flex-direction: column; gap: 14px; }
+}
 </style>
 </head>
-
 <body>
+
+<div class="bg-equations" aria-hidden="true">
+  <span class="eq">π = βE[π] + κx + ε</span>
+  <span class="eq">i = r* + π + φ(π − π*) + φ·ŷ</span>
+  <span class="eq">ΔY = α + βΔM + γΔG + ε</span>
+  <span class="eq">dCBI/dt = f(Δπ, Δi, ΔM)</span>
+  <span class="eq">E(π) = π + θ·ε</span>
+  <span class="eq">BVAR: Y = Σ AᵢY_{t−i} + ε</span>
+</div>
 
 <div class="page">
 
-<header class="topbar">
-  <a href="index.html" class="topbar-name">
-    IBNOUZAHIR <span>YOUSSEF</span>
-  </a>
+  <!-- Nav -->
+  <header class="topbar">
+    <a class="topbar-name" href="index.html">IBNOUZAHIR <span>YOUSSEF</span></a>
+    <nav class="topbar-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html" class="active">Teaching</a>
+      <a href="cv.pdf" class="cv-btn" download>CV ↓</a>
+    </nav>
+  </header>
 
-  <nav class="topbar-nav">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="teaching.html" class="active">Teaching</a>
-    <a href="cv.pdf">CV</a>
-  </nav>
-</header>
-
-<h1 class="page-title">Teaching</h1>
-<div class="page-rule"></div>
-
-<div class="card">
-  <div class="card-meta">2026 — Bachelor’s, Semester 6 (Econometrics Track)</div>
-  <div class="card-title">Advanced Macroeconomics</div>
-  <div class="card-desc">
-    Lead instructor for lectures and tutorial sessions. Focus on advanced macroeconomic dynamics and econometric foundations.
+  <!-- Page title -->
+  <div class="page-header">
+    <p class="page-eyebrow">Academic Activities</p>
+    <h1 class="page-title">Teaching</h1>
+    <div class="page-rule"></div>
   </div>
-</div>
 
-<div class="card">
-  <div class="card-meta">2026 — Bachelor’s, Semester 4 (Common Core)</div>
-  <div class="card-title">Monetary and Financial Economics</div>
-  <div class="card-desc">
-    Instructor for tutorial sessions. Introduction to monetary theory, central banking, and financial markets.
-  </div>
-</div>
+  <!-- Teaching Experience -->
+  <section class="section" aria-labelledby="teaching-title">
+    <div class="section-heading">
+      <h2 class="section-title" id="teaching-title">Teaching Experience</h2>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="intro-box">
+      <div class="intro-label">Overview</div>
+      <p class="intro-text">
+        I am passionate about sharing economic knowledge and have recently contributed to undergraduate instruction at the Faculty of Legal, Economic and Social Sciences in Mohammedia.
+      </p>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section class="section" aria-labelledby="courses-title">
+    <div class="section-heading">
+      <h2 class="section-title" id="courses-title">Courses</h2>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="courses-list">
+
+      <div class="course-card" style="animation-delay:0.1s">
+        <div class="course-meta">
+          <span class="course-year">2026</span>
+          <span class="course-level">Bachelor's · Semester 6</span>
+          <span class="course-role">Lead Instructor — Lectures &amp; Tutorials</span>
+        </div>
+        <div class="course-title">
+          Advanced Macroeconomics — Econometrics Track
+        </div>
+        <p class="course-description">
+          This course focuses on advanced macroeconomic dynamics, building on students' analytical and econometric foundations. Topics include modern macroeconomic modeling, dynamic stochastic frameworks, and applied econometric methods for policy analysis.
+        </p>
+      </div>
+
+      <div class="course-card" style="animation-delay:0.15s">
+        <div class="course-meta">
+          <span class="course-year">2026</span>
+          <span class="course-level">Bachelor's · Semester 4</span>
+          <span class="course-role">Instructor — Tutorial Sessions</span>
+        </div>
+        <div class="course-title">
+          Monetary and Financial Economics — Common Core
+        </div>
+        <p class="course-description">
+          This module introduces students to the fundamentals of monetary theory, central banking, and financial market operations. The tutorials emphasize practical understanding of monetary policy instruments, financial intermediation, and the institutional architecture of modern financial systems.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="institution-note">
+      <strong>Faculty of Legal, Economic and Social Sciences</strong> — Mohammedia, Morocco
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <span>© 2026 IBNOUZAHIR YOUSSEF</span>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="cv.pdf" download>CV</a>
+    </nav>
+  </footer>
 
 </div>
 
