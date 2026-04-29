@@ -236,6 +236,44 @@ html {
     radial-gradient(circle at 80% 10%, rgba(11,60,111,0.08), transparent 30%),
     linear-gradient(to bottom, #f4f7fb, #e8f1fb);
 }
+    html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    url("data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' opacity='0.08'>
+  
+  <!-- Phillips Curve -->
+  <path d='M50 200 Q200 50 400 200' stroke='%230b3c6f' fill='none' stroke-width='2'/>
+  
+  <!-- IS-LM -->
+  <line x1='100' y1='400' x2='300' y2='250' stroke='%232a6fa1' stroke-width='2'/>
+  <line x1='100' y1='250' x2='300' y2='400' stroke='%232a6fa1' stroke-width='2'/>
+  
+  <!-- AD-AS -->
+  <path d='M500 400 Q650 250 800 400' stroke='%230b3c6f' fill='none' stroke-width='2'/>
+  <path d='M500 250 Q650 400 800 250' stroke='%232a6fa1' fill='none' stroke-width='2'/>
+
+  <!-- Equation -->
+  <text x='900' y='150' font-size='18' fill='%230b3c6f'>π = βE(π) + κx</text>
+
+  <!-- Taylor Rule -->
+  <text x='900' y='200' font-size='16' fill='%230b3c6f'>i = r* + π + φ(π-π*)</text>
+
+  <!-- Central Banking -->
+  <text x='900' y='260' font-size='16' fill='%230b3c6f'>CB Policy</text>
+
+</svg>");
+    
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  pointer-events: none;
+  z-index: -1;
+}
 </style>
 </head>
 
