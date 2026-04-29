@@ -1,173 +1,237 @@
-<svg width="100%" viewBox="0 0 1400 900" role="img" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
 <defs>
-  <style>
-    .eq { font-family: Georgia, serif; fill: #0b3c6f; opacity: 0.13; }
-    .eq-sm { font-size: 13px; }
-    .eq-md { font-size: 16px; }
-    .eq-lg { font-size: 19px; }
-    .curve { fill: none; stroke: #0b3c6f; stroke-width: 1.4; opacity: 0.09; }
-    .curve2 { fill: none; stroke: #2a6fa1; stroke-width: 1.2; opacity: 0.08; }
-    .axis { stroke: #0b3c6f; stroke-width: 0.8; opacity: 0.07; }
-    .axislabel { font-family: Georgia, serif; fill: #0b3c6f; opacity: 0.1; font-size: 11px; }
-    .dot { fill: #0b3c6f; opacity: 0.08; }
-    .icon-stroke { stroke: #0b3c6f; stroke-width: 1.2; fill: none; opacity: 0.09; }
-    .icon-fill { fill: #0b3c6f; opacity: 0.07; }
-  </style>
+<style>
+.c{fill:none;stroke:#1a4e8a;stroke-width:1.2;opacity:0.12;}
+.c2{fill:none;stroke:#2a6fa1;stroke-width:1.0;opacity:0.10;}
+.ax{stroke:#1a4e8a;stroke-width:0.7;opacity:0.10;}
+.lbl{font-family:Georgia,serif;fill:#1a4e8a;opacity:0.14;font-size:10px;}
+.eq{font-family:Georgia,serif;fill:#1a4e8a;opacity:0.15;}
+.eq-t{font-family:Georgia,serif;fill:#1a4e8a;opacity:0.13;font-size:11px;font-weight:bold;}
+.dot{fill:#1a4e8a;opacity:0.10;}
+.gridl{stroke:#2a6fa1;stroke-width:0.3;opacity:0.06;}
+.dash{fill:none;stroke:#1a4e8a;stroke-width:0.6;stroke-dasharray:3,3;opacity:0.09;}
+</style>
 </defs>
 
-<!-- IS-LM haut-gauche -->
-<g transform="translate(60, 50)">
-  <line x1="0" y1="180" x2="220" y2="180" class="axis"/>
-  <line x1="0" y1="0" x2="0" y2="185" class="axis"/>
-  <text x="222" y="184" class="axislabel">Y</text>
-  <text x="-12" y="8" class="axislabel">r</text>
-  <path d="M10 20 Q80 80 210 160" class="curve"/>
-  <path d="M10 155 Q100 100 210 30" class="curve2"/>
-  <text x="215" y="155" class="axislabel">IS</text>
-  <text x="215" y="28" class="axislabel">LM</text>
-  <circle cx="110" cy="92" r="3.5" class="dot"/>
-  <line x1="110" y1="92" x2="110" y2="180" stroke="#0b3c6f" stroke-width="0.7" stroke-dasharray="4,3" opacity="0.07"/>
-  <line x1="0" y1="92" x2="110" y2="92" stroke="#0b3c6f" stroke-width="0.7" stroke-dasharray="4,3" opacity="0.07"/>
+<!-- WORLD MAP DOTTED -->
+<g transform="translate(340,150)">
+<line x1="-10" y1="0" x2="720" y2="0" class="gridl"/>
+<line x1="-10" y1="80" x2="720" y2="80" class="gridl"/>
+<line x1="-10" y1="160" x2="720" y2="160" class="gridl"/>
+<line x1="-10" y1="240" x2="720" y2="240" class="gridl"/>
+<line x1="0" y1="-10" x2="0" y2="290" class="gridl"/>
+<line x1="120" y1="-10" x2="120" y2="290" class="gridl"/>
+<line x1="240" y1="-10" x2="240" y2="290" class="gridl"/>
+<line x1="360" y1="-10" x2="360" y2="290" class="gridl"/>
+<line x1="480" y1="-10" x2="480" y2="290" class="gridl"/>
+<line x1="600" y1="-10" x2="600" y2="290" class="gridl"/>
+
+<!-- Amérique du Nord -->
+<g fill="#1a4e8a" opacity="0.075">
+<circle cx="50" cy="35" r="2.2"/><circle cx="58" cy="30" r="2"/><circle cx="66" cy="28" r="2.2"/><circle cx="74" cy="32" r="2"/><circle cx="82" cy="38" r="2.2"/><circle cx="58" cy="40" r="2"/><circle cx="66" cy="44" r="2.2"/><circle cx="74" cy="42" r="2"/><circle cx="54" cy="52" r="2.2"/><circle cx="62" cy="50" r="2"/><circle cx="70" cy="54" r="2.2"/><circle cx="78" cy="52" r="2"/><circle cx="86" cy="50" r="2.2"/><circle cx="46" cy="60" r="2"/><circle cx="54" cy="64" r="2.2"/><circle cx="62" cy="62" r="2"/><circle cx="70" cy="66" r="2.2"/><circle cx="78" cy="64" r="2"/><circle cx="86" cy="62" r="2.2"/><circle cx="50" cy="74" r="2"/><circle cx="58" cy="72" r="2.2"/><circle cx="66" cy="76" r="2"/><circle cx="74" cy="74" r="2.2"/><circle cx="82" cy="72" r="2"/><circle cx="56" cy="84" r="2.2"/><circle cx="64" cy="88" r="2"/><circle cx="72" cy="86" r="2.2"/><circle cx="80" cy="84" r="2"/><circle cx="88" cy="82" r="2.2"/><circle cx="60" cy="96" r="2"/><circle cx="68" cy="94" r="2.2"/><circle cx="76" cy="98" r="2"/><circle cx="84" cy="96" r="2.2"/><circle cx="40" cy="22" r="2"/><circle cx="50" cy="18" r="2.2"/><circle cx="60" cy="16" r="2"/><circle cx="70" cy="20" r="2.2"/><circle cx="80" cy="22" r="2"/>
 </g>
 
-<!-- AD-AS centre-haut -->
-<g transform="translate(420, 30)">
-  <line x1="0" y1="200" x2="240" y2="200" class="axis"/>
-  <line x1="0" y1="0" x2="0" y2="205" class="axis"/>
-  <text x="242" y="204" class="axislabel">Y</text>
-  <text x="-10" y="8" class="axislabel">P</text>
-  <path d="M15 25 Q90 100 225 185" class="curve"/>
-  <path d="M20 175 Q100 110 220 40" class="curve2"/>
-  <line x1="130" y1="5" x2="130" y2="200" stroke="#0b3c6f" stroke-width="1" stroke-dasharray="5,4" opacity="0.08"/>
-  <text x="133" y="12" class="axislabel">LRAS</text>
-  <text x="228" y="185" class="axislabel">AD</text>
-  <text x="222" y="38" class="axislabel">SRAS</text>
+<!-- Amérique du Sud -->
+<g fill="#1a4e8a" opacity="0.075">
+<circle cx="72" cy="120" r="2.2"/><circle cx="80" cy="118" r="2"/><circle cx="88" cy="122" r="2.2"/><circle cx="76" cy="132" r="2"/><circle cx="84" cy="130" r="2.2"/><circle cx="92" cy="134" r="2"/><circle cx="72" cy="144" r="2.2"/><circle cx="80" cy="148" r="2"/><circle cx="88" cy="146" r="2.2"/><circle cx="76" cy="158" r="2"/><circle cx="84" cy="162" r="2.2"/><circle cx="78" cy="172" r="2"/><circle cx="86" cy="170" r="2.2"/><circle cx="80" cy="184" r="2"/><circle cx="88" cy="182" r="2.2"/><circle cx="82" cy="196" r="2"/><circle cx="90" cy="194" r="2.2"/><circle cx="84" cy="208" r="2"/><circle cx="80" cy="218" r="2.2"/>
 </g>
 
-<!-- Courbe de Phillips haut-droite -->
-<g transform="translate(900, 40)">
-  <line x1="0" y1="190" x2="210" y2="190" class="axis"/>
-  <line x1="0" y1="0" x2="0" y2="195" class="axis"/>
-  <text x="212" y="194" class="axislabel">u</text>
-  <text x="-10" y="8" class="axislabel">π</text>
-  <path d="M15 15 Q40 70 80 115 Q130 155 200 175" class="curve"/>
-  <path d="M15 45 Q45 95 85 140 Q135 175 200 195" class="curve2"/>
-  <text x="160" y="165" class="axislabel">PC</text>
-  <text x="160" y="193" class="axislabel">E[PC]</text>
+<!-- Europe -->
+<g fill="#1a4e8a" opacity="0.075">
+<circle cx="268" cy="20" r="2.2"/><circle cx="276" cy="18" r="2"/><circle cx="284" cy="22" r="2.2"/><circle cx="292" cy="20" r="2"/><circle cx="272" cy="30" r="2.2"/><circle cx="280" cy="28" r="2"/><circle cx="288" cy="32" r="2.2"/><circle cx="296" cy="30" r="2"/><circle cx="268" cy="40" r="2.2"/><circle cx="276" cy="38" r="2"/><circle cx="284" cy="42" r="2.2"/><circle cx="292" cy="40" r="2"/><circle cx="300" cy="38" r="2"/><circle cx="274" cy="50" r="2.2"/><circle cx="282" cy="48" r="2"/><circle cx="290" cy="52" r="2.2"/><circle cx="298" cy="50" r="2"/><circle cx="278" cy="60" r="2.2"/><circle cx="286" cy="58" r="2"/><circle cx="262" cy="28" r="2.2"/><circle cx="258" cy="38" r="2"/><circle cx="304" cy="24" r="2.2"/>
 </g>
 
-<!-- Mundell-Fleming bas-gauche -->
-<g transform="translate(50, 560)">
-  <line x1="0" y1="200" x2="220" y2="200" class="axis"/>
-  <line x1="0" y1="0" x2="0" y2="205" class="axis"/>
-  <text x="222" y="204" class="axislabel">Y</text>
-  <text x="-10" y="8" class="axislabel">e</text>
-  <path d="M10 170 Q100 100 210 35" class="curve"/>
-  <path d="M12 25 Q90 95 208 178" class="curve2"/>
-  <text x="212" y="32" class="axislabel">BP=0</text>
-  <text x="210" y="180" class="axislabel">IS*</text>
+<!-- Afrique -->
+<g fill="#1a4e8a" opacity="0.075">
+<circle cx="278" cy="78" r="2.2"/><circle cx="286" cy="76" r="2"/><circle cx="294" cy="80" r="2.2"/><circle cx="302" cy="78" r="2"/><circle cx="274" cy="90" r="2.2"/><circle cx="282" cy="88" r="2"/><circle cx="290" cy="92" r="2.2"/><circle cx="298" cy="90" r="2"/><circle cx="306" cy="88" r="2.2"/><circle cx="278" cy="102" r="2"/><circle cx="286" cy="100" r="2.2"/><circle cx="294" cy="104" r="2"/><circle cx="302" cy="102" r="2.2"/><circle cx="282" cy="114" r="2"/><circle cx="290" cy="118" r="2.2"/><circle cx="298" cy="116" r="2"/><circle cx="286" cy="130" r="2.2"/><circle cx="294" cy="128" r="2"/><circle cx="290" cy="142" r="2.2"/><circle cx="298" cy="140" r="2"/><circle cx="288" cy="154" r="2.2"/><circle cx="296" cy="158" r="2"/><circle cx="290" cy="168" r="2.2"/><circle cx="284" cy="178" r="2"/>
 </g>
 
-<!-- Solow Growth bas-centre -->
-<g transform="translate(400, 550)">
-  <line x1="0" y1="210" x2="250" y2="210" class="axis"/>
-  <line x1="0" y1="0" x2="0" y2="215" class="axis"/>
-  <text x="252" y="214" class="axislabel">k</text>
-  <text x="-12" y="8" class="axislabel">y</text>
-  <path d="M5 205 Q60 120 130 80 Q190 55 245 45" class="curve"/>
-  <path d="M0 210 L245 60" class="curve2"/>
-  <line x1="160" y1="55" x2="160" y2="210" stroke="#0b3c6f" stroke-width="0.7" stroke-dasharray="4,3" opacity="0.07"/>
-  <text x="162" y="207" class="axislabel">k*</text>
-  <text x="238" y="43" class="axislabel">sf(k)</text>
-  <text x="238" y="62" class="axislabel">(n+δ)k</text>
+<!-- Asie -->
+<g fill="#1a4e8a" opacity="0.075">
+<circle cx="380" cy="20" r="2.2"/><circle cx="392" cy="18" r="2"/><circle cx="404" cy="22" r="2.2"/><circle cx="416" cy="20" r="2"/><circle cx="428" cy="18" r="2.2"/><circle cx="440" cy="22" r="2"/><circle cx="452" cy="20" r="2.2"/><circle cx="464" cy="18" r="2"/><circle cx="476" cy="22" r="2.2"/><circle cx="488" cy="20" r="2"/><circle cx="386" cy="32" r="2.2"/><circle cx="398" cy="30" r="2"/><circle cx="410" cy="34" r="2.2"/><circle cx="422" cy="32" r="2"/><circle cx="434" cy="30" r="2.2"/><circle cx="446" cy="34" r="2"/><circle cx="458" cy="32" r="2.2"/><circle cx="470" cy="30" r="2"/><circle cx="482" cy="34" r="2.2"/><circle cx="494" cy="32" r="2"/><circle cx="390" cy="44" r="2.2"/><circle cx="402" cy="42" r="2"/><circle cx="414" cy="46" r="2.2"/><circle cx="426" cy="44" r="2"/><circle cx="438" cy="42" r="2.2"/><circle cx="450" cy="46" r="2"/><circle cx="462" cy="44" r="2.2"/><circle cx="474" cy="42" r="2"/><circle cx="486" cy="46" r="2.2"/><circle cx="394" cy="56" r="2"/><circle cx="406" cy="54" r="2.2"/><circle cx="418" cy="58" r="2"/><circle cx="430" cy="56" r="2.2"/><circle cx="442" cy="54" r="2"/><circle cx="454" cy="58" r="2.2"/><circle cx="466" cy="56" r="2"/><circle cx="400" cy="68" r="2.2"/><circle cx="412" cy="66" r="2"/><circle cx="424" cy="70" r="2.2"/><circle cx="436" cy="68" r="2"/><circle cx="448" cy="66" r="2.2"/><circle cx="460" cy="70" r="2"/><circle cx="472" cy="68" r="2.2"/><circle cx="404" cy="80" r="2"/><circle cx="416" cy="78" r="2.2"/><circle cx="428" cy="82" r="2"/><circle cx="440" cy="80" r="2.2"/><circle cx="452" cy="78" r="2"/>
+<circle cx="414" cy="92" r="2.2"/><circle cx="422" cy="90" r="2"/><circle cx="430" cy="94" r="2.2"/><circle cx="438" cy="92" r="2"/><circle cx="418" cy="104" r="2.2"/><circle cx="426" cy="102" r="2"/><circle cx="434" cy="106" r="2.2"/><circle cx="422" cy="116" r="2"/><circle cx="430" cy="114" r="2.2"/>
+<circle cx="464" cy="90" r="2.2"/><circle cx="472" cy="88" r="2"/><circle cx="480" cy="92" r="2.2"/><circle cx="468" cy="102" r="2"/><circle cx="476" cy="100" r="2.2"/>
 </g>
 
-<!-- Taylor Rule bas-droite -->
-<g transform="translate(900, 560)">
-  <line x1="0" y1="200" x2="220" y2="200" class="axis"/>
-  <line x1="0" y1="0" x2="0" y2="205" class="axis"/>
-  <text x="222" y="204" class="axislabel">π</text>
-  <text x="-8" y="8" class="axislabel">i</text>
-  <line x1="0" y1="200" x2="200" y2="0" stroke="#0b3c6f" stroke-width="0.9" stroke-dasharray="6,4" opacity="0.07"/>
-  <path d="M5 185 Q80 120 180 30" class="curve"/>
-  <text x="183" y="27" class="axislabel">TR</text>
+<!-- Australie -->
+<g fill="#1a4e8a" opacity="0.075">
+<circle cx="486" cy="160" r="2.2"/><circle cx="498" cy="158" r="2"/><circle cx="510" cy="162" r="2.2"/><circle cx="522" cy="160" r="2"/><circle cx="534" cy="158" r="2.2"/><circle cx="490" cy="172" r="2"/><circle cx="502" cy="170" r="2.2"/><circle cx="514" cy="174" r="2"/><circle cx="526" cy="172" r="2.2"/><circle cx="538" cy="170" r="2"/><circle cx="494" cy="184" r="2.2"/><circle cx="506" cy="182" r="2"/><circle cx="518" cy="186" r="2.2"/><circle cx="530" cy="184" r="2"/><circle cx="500" cy="194" r="2.2"/><circle cx="512" cy="192" r="2"/><circle cx="524" cy="196" r="2.2"/>
 </g>
 
-<!-- Graphique boursier droite -->
-<g transform="translate(1250, 330)" opacity="0.08">
-  <line x1="0" y1="100" x2="120" y2="100" class="axis"/>
-  <line x1="0" y1="0" x2="0" y2="103" class="axis"/>
-  <polyline points="5,80 20,65 35,70 50,45 65,50 80,30 95,35 115,15" class="curve" style="opacity:0.12"/>
-  <circle cx="115" cy="15" r="3" class="dot"/>
+<!-- Russie -->
+<g fill="#1a4e8a" opacity="0.075">
+<circle cx="316" cy="20" r="2"/><circle cx="328" cy="18" r="2.2"/><circle cx="340" cy="16" r="2"/><circle cx="352" cy="20" r="2.2"/><circle cx="364" cy="18" r="2"/><circle cx="322" cy="32" r="2.2"/><circle cx="334" cy="30" r="2"/><circle cx="346" cy="34" r="2.2"/><circle cx="358" cy="32" r="2"/><circle cx="370" cy="30" r="2.2"/><circle cx="326" cy="44" r="2"/><circle cx="338" cy="42" r="2.2"/><circle cx="350" cy="46" r="2"/><circle cx="362" cy="44" r="2.2"/><circle cx="374" cy="42" r="2"/>
+</g>
 </g>
 
-<!-- ÉQUATIONS DISPERSÉES -->
-<text x="310" y="260" class="eq eq-lg" transform="rotate(-3, 310, 260)">π_t = βE_t[π_{t+1}] + κx_t</text>
-<text x="720" y="195" class="eq eq-md" transform="rotate(2, 720, 195)">i_t = r* + π* + φ_π(π_t − π*) + φ_y ỹ_t</text>
-<text x="1080" y="290" class="eq eq-md" transform="rotate(-1.5, 1080, 290)">(1 + i) = (1 + r)(1 + πᵉ)</text>
-<text x="130" y="420" class="eq eq-lg" transform="rotate(1, 130, 420)">MV = PY</text>
-<text x="400" y="490" class="eq eq-md" transform="rotate(-2, 400, 490)">Y = A · K^α · L^{1−α}</text>
-<text x="780" y="430" class="eq eq-md" transform="rotate(1.5, 780, 430)">C_t^{−σ} = β(1 + r_{t+1}) C_{t+1}^{−σ}</text>
-<text x="1100" y="470" class="eq eq-sm" transform="rotate(-2, 1100, 470)">i − i* = E[Δe_{t+1}]</text>
-<text x="55" y="310" class="eq eq-sm" transform="rotate(2, 55, 310)">W/P = MRS(C, L)</text>
-<text x="640" y="330" class="eq eq-md" transform="rotate(-1, 640, 330)">b_{t+1} = (1+r)b_t − s_t</text>
-<text x="1170" y="380" class="eq eq-sm" transform="rotate(2, 1170, 380)">ċ/c = (r − ρ)/σ</text>
-<text x="320" y="390" class="eq eq-sm" transform="rotate(-1.5, 320, 390)">CA + KA = 0</text>
-<text x="920" y="310" class="eq eq-sm" transform="rotate(1, 920, 310)">M/P = L(i, Y)</text>
-<text x="100" y="510" class="eq eq-sm" transform="rotate(-2, 100, 510)">x_t = E_t[x_{t+1}] − σ(i_t − E_t[π_{t+1}] − r*)</text>
-<text x="1050" y="540" class="eq eq-sm" transform="rotate(1.5, 1050, 540)">Optimal Currency Area</text>
-<text x="500" y="860" class="eq eq-sm" transform="rotate(-1, 500, 860)">L = (π − π*)² + λ(y − y*)²</text>
-<text x="800" y="820" class="eq eq-sm" transform="rotate(2, 800, 820)">H = U(c,t) + λ f(k,c)</text>
-<text x="200" y="780" class="eq eq-md" transform="rotate(-1.5, 200, 780)">Y ≡ C + I + G + NX</text>
-<text x="1100" y="750" class="eq eq-sm" transform="rotate(1, 1100, 750)">r = i − πᵉ</text>
-<text x="1200" y="145" class="eq eq-sm" transform="rotate(-2, 1200, 145)">P = MC · μ</text>
-<text x="680" y="840" class="eq eq-sm" transform="rotate(-1, 680, 840)">ẏ/y = A − δ − n</text>
-
-<!-- ICÔNES BANQUE CENTRALE -->
-
-<!-- Bâtiment centre-haut -->
-<g transform="translate(695, 60)" opacity="0.07">
-  <rect x="0" y="50" width="90" height="65" class="icon-stroke"/>
-  <rect x="10" y="60" width="15" height="25" class="icon-stroke"/>
-  <rect x="37" y="60" width="15" height="25" class="icon-stroke"/>
-  <rect x="65" y="60" width="15" height="25" class="icon-stroke"/>
-  <polygon points="45,5 0,50 90,50" class="icon-stroke"/>
-  <line x1="0" y1="115" x2="90" y2="115" stroke="#0b3c6f" stroke-width="2" opacity="0.09"/>
-  <line x1="-10" y1="118" x2="100" y2="118" stroke="#0b3c6f" stroke-width="2.5" opacity="0.09"/>
-  <text x="17" y="135" class="axislabel" style="font-size:9px;">CENTRAL BANK</text>
+<!-- IS-LM -->
+<text x="22" y="28" class="eq-t" font-size="12">IS – LM Model</text>
+<g transform="translate(18,38)">
+<line x1="0" y1="175" x2="200" y2="175" class="ax"/>
+<line x1="0" y1="0" x2="0" y2="178" class="ax"/>
+<path d="M6,15 Q72,80 192,162" class="c"/>
+<path d="M6,155 Q90,100 192,25" class="c2"/>
+<line x1="100" y1="90" x2="100" y2="175" class="dash"/>
+<line x1="0" y1="90" x2="100" y2="90" class="dash"/>
+<circle cx="100" cy="90" r="3" class="dot"/>
+<text x="194" y="158" class="lbl">IS</text>
+<text x="194" y="23" class="lbl">LM</text>
+<text x="143" y="82" class="lbl">i*</text>
+<text x="94" y="186" class="lbl">Y*</text>
+<text x="196" y="179" class="lbl">Y</text>
+<text x="-12" y="7" class="lbl">i</text>
 </g>
 
-<!-- Bâtiment bas-droite -->
-<g transform="translate(1170, 650)" opacity="0.06">
-  <rect x="0" y="45" width="75" height="55" class="icon-stroke"/>
-  <rect x="8" y="55" width="12" height="20" class="icon-stroke"/>
-  <rect x="31" y="55" width="12" height="20" class="icon-stroke"/>
-  <rect x="55" y="55" width="12" height="20" class="icon-stroke"/>
-  <polygon points="37,5 0,45 75,45" class="icon-stroke"/>
-  <line x1="0" y1="100" x2="75" y2="100" stroke="#0b3c6f" stroke-width="2" opacity="0.09"/>
+<!-- AD-AS -->
+<text x="22" y="268" class="eq-t" font-size="12">AD – AS Model</text>
+<g transform="translate(18,278)">
+<line x1="0" y1="185" x2="210" y2="185" class="ax"/>
+<line x1="0" y1="0" x2="0" y2="188" class="ax"/>
+<path d="M10,20 Q82,95 200,175" class="c"/>
+<path d="M15,172 Q92,108 205,38" class="c2"/>
+<line x1="102" y1="4" x2="102" y2="185" class="dash"/>
+<circle cx="102" cy="97" r="3" class="dot"/>
+<text x="202" y="172" class="lbl">AD</text>
+<text x="203" y="36" class="lbl">AS</text>
+<text x="97" y="193" class="lbl">Y*</text>
+<text x="212" y="188" class="lbl">Y</text>
+<text x="-10" y="7" class="lbl">P</text>
 </g>
 
-<!-- Pièce $ milieu-gauche -->
-<g transform="translate(285, 600)" opacity="0.08">
-  <circle cx="35" cy="35" r="33" class="icon-stroke"/>
-  <circle cx="35" cy="35" r="26" class="icon-stroke"/>
-  <text x="35" y="40" text-anchor="middle" class="axislabel" style="font-size:14px; font-weight:bold;">$</text>
+<!-- Solow -->
+<text x="22" y="530" class="eq-t" font-size="12">Solow Growth Model</text>
+<g transform="translate(18,542)">
+<line x1="0" y1="185" x2="215" y2="185" class="ax"/>
+<line x1="0" y1="0" x2="0" y2="188" class="ax"/>
+<path d="M4,182 Q50,115 118,78 Q175,52 210,44" class="c"/>
+<path d="M0,185 L210,55" class="c2"/>
+<line x1="142" y1="50" x2="142" y2="185" class="dash"/>
+<circle cx="142" cy="97" r="3" class="dot"/>
+<text x="212" y="42" class="lbl">sf(k)</text>
+<text x="212" y="56" class="lbl">(n+d)k</text>
+<text x="144" y="182" class="lbl">k*</text>
+<text x="216" y="188" class="lbl">k</text>
+<text x="-10" y="7" class="lbl">y</text>
 </g>
 
-<!-- Pièce € haut-droite -->
-<g transform="translate(1290, 55)" opacity="0.07">
-  <circle cx="30" cy="30" r="28" class="icon-stroke"/>
-  <circle cx="30" cy="30" r="22" class="icon-stroke"/>
-  <text x="30" y="36" text-anchor="middle" class="axislabel" style="font-size:13px; font-weight:bold;">€</text>
+<!-- Equations gauche -->
+<text x="18" y="498" class="eq" font-size="13" font-style="italic">MV = PY</text>
+<text x="14" y="518" class="eq" font-size="11">Y = C(Y-T) + I(i) + G</text>
+<text x="230" y="228" class="eq" font-size="11" font-style="italic">c/c = (r - p)/s</text>
+<text x="240" y="248" class="eq" font-size="12" font-style="italic">k = sf(k) - (n+d)k</text>
+
+<!-- Phillips curve haut -->
+<text x="22" y="12" class="eq-t" font-size="10">Phillips Curve</text>
+<g transform="translate(240,38)">
+<line x1="0" y1="155" x2="100" y2="155" class="ax"/>
+<line x1="0" y1="0" x2="0" y2="158" class="ax"/>
+<path d="M5,12 Q18,48 40,80 Q62,112 92,140" class="c"/>
+<text x="94" y="158" class="lbl">u</text>
+<text x="-10" y="7" class="lbl">pi</text>
 </g>
 
-<!-- Points de données -->
-<circle cx="370" cy="150" r="2" class="dot"/>
-<circle cx="620" cy="445" r="1.8" class="dot"/>
-<circle cx="870" cy="245" r="2" class="dot"/>
-<circle cx="1050" cy="150" r="1.8" class="dot"/>
-<circle cx="175" cy="460" r="2" class="dot"/>
-<circle cx="1350" cy="480" r="2" class="dot"/>
-<circle cx="760" cy="780" r="1.8" class="dot"/>
+<!-- Pie chart -->
+<g transform="translate(230,430)" opacity="0.10">
+<circle cx="50" cy="50" r="46" fill="none" stroke="#1a4e8a" stroke-width="1"/>
+<path d="M50,50 L50,4 A46,46 0 0,1 90,27 Z" fill="#1a4e8a" opacity="0.35"/>
+<path d="M50,50 L90,27 A46,46 0 0,1 96,50 Z" fill="#1a4e8a" opacity="0.20"/>
+<path d="M50,50 L96,50 A46,46 0 0,1 72,90 Z" fill="#1a4e8a" opacity="0.12"/>
+<path d="M50,50 L72,90 A46,46 0 1,1 50,4 Z" fill="#1a4e8a" opacity="0.06"/>
+</g>
+
+<!-- DROITE : Taylor Rule -->
+<text x="1108" y="28" class="eq-t" font-size="11">Taylor Rule</text>
+<text x="1082" y="44" class="eq" font-size="10" font-style="italic">i_t = r* + pi_t + phi_pi(pi_t - pi*) + phi_y(y_t - y*)</text>
+
+<!-- Aggregate Supply -->
+<text x="900" y="28" class="eq-t" font-size="11">Aggregate Supply</text>
+<text x="920" y="44" class="eq" font-size="12" font-style="italic">Y = F(K, L)</text>
+
+<!-- NK Phillips haut -->
+<text x="1082" y="62" class="eq" font-size="10" font-style="italic">pi_t = bE_t pi_{t+1} + kx_t + u_t</text>
+
+<!-- Central Banking icone -->
+<text x="1100" y="220" class="eq-t" font-size="11">Central Banking</text>
+<g transform="translate(1118,228)" opacity="0.12">
+<rect x="0" y="44" width="76" height="56" fill="none" stroke="#1a4e8a" stroke-width="1.1"/>
+<rect x="8" y="54" width="13" height="20" fill="none" stroke="#1a4e8a" stroke-width="1"/>
+<rect x="30" y="54" width="13" height="20" fill="none" stroke="#1a4e8a" stroke-width="1"/>
+<rect x="53" y="54" width="13" height="20" fill="none" stroke="#1a4e8a" stroke-width="1"/>
+<polygon points="38,4 -2,44 78,44" fill="none" stroke="#1a4e8a" stroke-width="1.1"/>
+<line x1="-4" y1="100" x2="82" y2="100" stroke="#1a4e8a" stroke-width="2"/>
+</g>
+<text x="1210" y="285" class="eq" font-size="10">Price Stability</text>
+<text x="1207" y="299" class="eq" font-size="10">Financial Stability</text>
+<text x="1210" y="313" class="eq" font-size="10">Economic Growth</text>
+
+<!-- Money Demand -->
+<text x="1092" y="368" class="eq-t" font-size="11">Money Demand</text>
+<text x="1098" y="392" class="eq" font-size="16" font-style="italic">M/P = L(i, Y)</text>
+
+<!-- Interest Rate Rule -->
+<text x="1088" y="436" class="eq-t" font-size="11">Interest Rate Rule</text>
+<text x="1082" y="454" class="eq" font-size="10" font-style="italic">i_t = ri_{t-1} + (1-r)(i + phi_pi*pi_t + phi_y*y_t) + e_t</text>
+
+<!-- Yield Curve -->
+<text x="1090" y="490" class="eq-t" font-size="10">Yield Curve</text>
+<g transform="translate(1082,498)">
+<line x1="0" y1="60" x2="160" y2="60" class="ax"/>
+<line x1="0" y1="0" x2="0" y2="63" class="ax"/>
+<path d="M5,52 Q28,28 62,18 Q100,12 155,10" class="c"/>
+<path d="M5,55 Q25,42 55,38 Q95,34 155,32" class="c2"/>
+<text x="157" y="9" class="lbl">normal</text>
+<text x="157" y="31" class="lbl">flat</text>
+</g>
+
+<!-- Impulse Response -->
+<text x="1112" y="560" class="eq-t" font-size="11">Impulse Response</text>
+<text x="1098" y="574" class="eq" font-size="10">to Monetary Policy Shock</text>
+<g transform="translate(1095,582)">
+<line x1="0" y1="80" x2="190" y2="80" class="ax"/>
+<line x1="0" y1="0" x2="0" y2="83" class="ax"/>
+<path d="M2,40 Q15,5 30,35 Q45,65 60,50 Q75,35 90,42 Q105,48 120,44 Q140,41 170,40 Q188,40 188,40" fill="none" stroke="#1a4e8a" stroke-width="1.2" opacity="0.13"/>
+<line x1="2" y1="40" x2="188" y2="40" stroke="#1a4e8a" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.08"/>
+</g>
+
+<!-- Current Account -->
+<text x="1098" y="696" class="eq-t" font-size="11">Current Account</text>
+<text x="1098" y="714" class="eq" font-size="12" font-style="italic">CA = Y - C - I - G</text>
+
+<!-- Pièce bas-droite -->
+<g transform="translate(1312,728)" opacity="0.09">
+<circle cx="35" cy="35" r="33" fill="none" stroke="#1a4e8a" stroke-width="1.2"/>
+<circle cx="35" cy="35" r="25" fill="none" stroke="#1a4e8a" stroke-width="0.8"/>
+<path d="M22,20 Q35,14 48,20 Q52,26 48,32 Q35,36 22,42 Q18,48 22,54 Q35,60 48,54" fill="none" stroke="#1a4e8a" stroke-width="1.2"/>
+<line x1="35" y1="12" x2="35" y2="18" stroke="#1a4e8a" stroke-width="1.2"/>
+<line x1="35" y1="52" x2="35" y2="58" stroke="#1a4e8a" stroke-width="1.2"/>
+</g>
+
+<!-- BAS : Output Gap -->
+<text x="370" y="798" class="eq-t" font-size="11">Output Gap</text>
+<text x="368" y="816" class="eq" font-size="12" font-style="italic">x_t = y_t - y_t^p</text>
+<g transform="translate(352,824)">
+<line x1="0" y1="55" x2="155" y2="55" class="ax"/>
+<line x1="0" y1="0" x2="0" y2="58" class="ax"/>
+<rect x="10" y="25" width="18" height="30" fill="#1a4e8a" opacity="0.07"/>
+<rect x="32" y="15" width="18" height="40" fill="#1a4e8a" opacity="0.07"/>
+<rect x="54" y="30" width="18" height="25" fill="#1a4e8a" opacity="0.07"/>
+<rect x="76" y="10" width="18" height="45" fill="#1a4e8a" opacity="0.07"/>
+<rect x="98" y="20" width="18" height="35" fill="#1a4e8a" opacity="0.07"/>
+<rect x="120" y="35" width="18" height="20" fill="#1a4e8a" opacity="0.07"/>
+</g>
+
+<!-- Euler -->
+<text x="600" y="818" class="eq" font-size="11" font-style="italic">E_t[sum b^t u(C_t, 1-N_t)]</text>
+
+<!-- NK Phillips bas -->
+<text x="798" y="798" class="eq-t" font-size="11">New Keynesian Phillips Curve</text>
+<text x="810" y="818" class="eq" font-size="12" font-style="italic">pi_t = bE_t pi_{t+1} + kx_t</text>
+
+<!-- Cobb-Douglas -->
+<text x="560" y="860" class="eq" font-size="12" font-style="italic">Y = A * K^a * L^(1-a)</text>
+
+<!-- UIP et Fisher -->
+<text x="870" y="760" class="eq" font-size="11" font-style="italic">i - i* = E_t[De_{t+1}]</text>
+<text x="870" y="780" class="eq" font-size="11" font-style="italic">(1+i) = (1+r)(1+pi^e)</text>
 
 </svg>
