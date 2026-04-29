@@ -1,181 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Teaching - Ibnouzahir Youssef</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching — Ibnouzahir Youssef</title>
 
-  <style>
-html {
-  min-height: 100%;
-  background: linear-gradient(
-    135deg,
-    #d9e6f5 0%,
-    #c6d9ee 40%,
-    #eaf1f9 100%
-  );
-}
-    html::before {
-  content: "";
-  position: fixed;
-  inset: 0;
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-  background:
-    radial-gradient(circle at 10% 20%, rgba(11,60,111,0.25), transparent 35%),
-    radial-gradient(circle at 85% 15%, rgba(42,111,161,0.20), transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(11,60,111,0.12), transparent 45%);
-
-  z-index: -1;
-  pointer-events: none;
-}
-    html::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-
-  background: linear-gradient(
-    120deg,
-    transparent 70%,
-    rgba(255,255,255,0.15)
-  );
-
-  z-index: -1;
-  pointer-events: none;
+<style>
+:root {
+  --navy: #0b2d4e;
+  --mid: #1a5276;
+  --sky: #2e86c1;
+  --ice: #d6eaf8;
+  --paper: #f5f7fa;
+  --text: #1c2b3a;
+  --muted: #5d7a8c;
+  --line: rgba(11,45,78,0.13);
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
 }
 
 body {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 55px 20px 35px 20px;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #1a1a1a;
-
-  background: transparent;
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--text);
+  margin: 0;
 }
 
-/* liens */
-a {
-  color: #1f4e79;
-  text-decoration: none;
+/* BACKGROUND */
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(11,45,78,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,45,78,0.04) 1px, transparent 1px);
+  background-size:60px 60px;
 }
 
-a:hover {
-  color: #0b3c6f;
-  text-decoration: underline;
-}
-
-/* NOM */
-h1, h1 a {
-  color: #0b3c6f;
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-/* TITRES (Teaching) */
-h2 {
-  margin-top: 40px;
-  color: #1f4e79;
-  border-bottom: 2px solid #2a6fa1;
-  padding-bottom: 6px;
-}
-
-/* TEXTE */
-p, .course {
-  text-align: justify;
+/* LAYOUT */
+.page {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 25px;
 }
 
 /* NAV */
-.nav {
-  color: #6b7c8f;
-  margin-bottom: 30px;
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:50px;
 }
 
-/* COURS */
-.course {
-  margin-bottom: 25px;
+.topbar-name {
+  font-family:var(--serif);
+  color:var(--navy);
+  text-decoration:none;
+}
+
+.topbar-nav a {
+  margin-left:10px;
+  padding:6px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  color:var(--mid);
+}
+
+.topbar-nav a:hover,
+.topbar-nav .active {
+  background:var(--navy);
+  color:white;
+}
+
+/* TITLE */
+.page-title {
+  font-family:var(--serif);
+  font-size:40px;
+  color:var(--navy);
+}
+
+.page-rule {
+  height:2px;
+  background:linear-gradient(to right,var(--navy),var(--sky));
+  margin:10px 0 40px;
+}
+
+/* COURSE CARD */
+.course-card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:20px;
+  margin-bottom:15px;
+  transition:0.25s;
+}
+
+.course-card:hover {
+  transform:translateX(4px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 .course-title {
-  color: #0b3c6f; /* même couleur que ton nom */
-  font-weight: 600;
-}
-    .name {
-  margin-bottom: 5px; /* 🔥 rapproche du menu */
-}
-
-nav {
-  margin-top: 5px;    /* 🔥 rapproche du nom */
-  margin-bottom: 25px;
-}
-    .nav a {
-  color: #0b3c6f;
-  font-weight: 600;
-  text-decoration: none;
+  font-family:var(--serif);
+  font-size:18px;
+  color:var(--navy);
+  margin-bottom:10px;
 }
 
-.nav a:hover {
-  text-decoration: underline; /* 🔥 soulignement au survol */
-}
-    nav {
-  margin-top: 10px;
-  margin-bottom: 25px;
-}
-
-nav a {
-  margin-right: 10px;
-  padding: 4px 10px;
-  border-radius: 5px;
-
-  border: 1px solid #0b3c6f;
-  background-color: #e8f1fb;
-  color: #0b3c6f;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  display: inline-block;
-  transition: all 0.2s ease;
-}
-
-nav a:hover {
-  background-color: #0b3c6f;
-  color: white;
-  transform: translateY(-2px);
+.course-desc {
+  color:var(--muted);
+  font-size:15px;
 }
 </style>
 </head>
 
 <body>
 
-  <h1><a href="index.html">Ibnouzahir Youssef</a></h1>
+<div class="page">
 
-  <nav>
-  <a href="index.html">Home</a>
-  <a href="research.html">Research</a>
-</nav>
+<header class="topbar">
+  <a href="index.html" class="topbar-name">IBNOUZAHIR <span style="color:#2e86c1">YOUSSEF</span></a>
+  <nav class="topbar-nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="teaching.html" class="active">Teaching</a>
+    <a href="cv.pdf">CV</a>
+  </nav>
+</header>
 
-  <h2>Teaching Experience</h2>
+<h1 class="page-title">Teaching</h1>
+<div class="page-rule"></div>
 
-  <p>
-    I am passionate about sharing economic knowledge and have recently contributed to undergraduate instruction at the Faculty of Legal, Economic and Social Sciences in Mohammedia.
-  </p>
-
-  <div class="course">
-    <span class="course-title">
-      Advanced Macroeconomics (Bachelor’s, Semester 6, Econometrics Track, 2026)
-    </span><br>
-    Lead instructor for both lectures and tutorial sessions. This course focuses on advanced macroeconomic dynamics, building on students’ analytical and econometric foundations.
+<div class="course-card">
+  <div class="course-title">
+    Advanced Macroeconomics (Bachelor’s, Semester 6, Econometrics Track, 2026)
   </div>
-
-  <div class="course">
-    <span class="course-title">
-      Monetary and Financial Economics (Bachelor’s, Semester 4, Common Core, 2026)
-    </span><br>
-    Instructor for tutorial sessions. This module introduces students to the fundamentals of monetary theory, central banking, and financial market operations.
+  <div class="course-desc">
+    Lead instructor for both lectures and tutorial sessions. Focus on advanced macroeconomic dynamics and econometric foundations.
   </div>
+</div>
+
+<div class="course-card">
+  <div class="course-title">
+    Monetary and Financial Economics (Bachelor’s, Semester 4, Common Core, 2026)
+  </div>
+  <div class="course-desc">
+    Tutorial instructor. Introduction to monetary theory, central banking, and financial market operations.
+  </div>
+</div>
+
+</div>
 
 </body>
 </html>
