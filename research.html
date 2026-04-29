@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Teaching — Ibnouzahir Youssef</title>
-<meta name="description" content="Teaching page of Ibnouzahir Youssef — undergraduate courses in macroeconomics and monetary economics.">
+<title>Research — Ibnouzahir Youssef</title>
+<meta name="description" content="Research page of Ibnouzahir Youssef — publications, PhD thesis, and work in progress.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -217,8 +217,8 @@ body::after {
   margin: 6px 0 24px 0;
 }
 
-/* ─── INTRO BOX ─── */
-.intro-box {
+/* ─── THESIS BOX ─── */
+.thesis-box {
   background: #fff;
   border: 1px solid var(--line);
   border-left: 3px solid var(--sky);
@@ -227,7 +227,7 @@ body::after {
   margin-bottom: 24px;
 }
 
-.intro-label {
+.thesis-label {
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 500;
@@ -237,22 +237,50 @@ body::after {
   margin-bottom: 8px;
 }
 
-.intro-text {
+.thesis-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.thesis-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.thesis-list li {
   font-family: var(--serif);
   font-size: 16px;
   color: var(--text);
   line-height: 1.7;
+  padding-left: 18px;
+  position: relative;
   text-align: justify;
 }
 
-/* ─── COURSE CARDS ─── */
-.courses-list {
+.thesis-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--sky);
+  font-weight: 400;
+}
+
+/* ─── PAPER CARDS ─── */
+.papers-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.course-card {
+.paper-card {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -263,7 +291,7 @@ body::after {
   animation: fadeIn 0.9s ease both;
 }
 
-.course-card::before {
+.paper-card::before {
   content: "";
   position: absolute;
   left: 0; top: 0; bottom: 0;
@@ -274,23 +302,23 @@ body::after {
   transition: transform 0.3s ease;
 }
 
-.course-card:hover {
+.paper-card:hover {
   border-color: rgba(46,134,193,0.3);
   box-shadow: 0 4px 16px rgba(11,45,78,0.07);
   transform: translateX(3px);
 }
 
-.course-card:hover::before { transform: scaleY(1); }
+.paper-card:hover::before { transform: scaleY(1); }
 
-.course-meta {
+.paper-meta {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 
-.course-year {
+.paper-year {
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 500;
@@ -301,9 +329,87 @@ body::after {
   letter-spacing: 0.3px;
 }
 
-.course-level {
+.paper-authors {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 12.5px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.paper-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.paper-title a {
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.paper-title a:hover {
+  color: var(--sky);
+  text-decoration: underline;
+}
+
+/* Abstract — collapsed by default, expand on click */
+.paper-abstract {
+  font-family: var(--serif);
+  font-size: 15.5px;
+  color: var(--muted);
+  line-height: 1.8;
+  text-align: justify;
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.paper-abstract.open { display: block; }
+
+.abstract-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--sky);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.abstract-toggle:hover { color: var(--navy); }
+
+.toggle-icon {
+  display: inline-block;
+  transition: transform 0.25s ease;
+  font-style: normal;
+}
+
+.toggle-icon.open { transform: rotate(90deg); }
+
+/* ─── WORK IN PROGRESS ─── */
+.wip-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid rgba(46,134,193,0.35);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.wip-badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10.5px;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -311,49 +417,23 @@ body::after {
   background: var(--ice);
   padding: 2px 9px;
   border-radius: 20px;
+  margin-bottom: 10px;
 }
 
-.course-role {
-  font-family: var(--sans);
-  font-size: 12.5px;
-  color: var(--muted);
-  font-weight: 400;
-}
-
-.course-title {
+.wip-title {
   font-family: var(--serif);
   font-size: 17px;
   font-weight: 500;
   font-style: italic;
-  color: var(--mid);
-  line-height: 1.4;
-  margin-bottom: 12px;
-}
-
-.course-description {
-  font-family: var(--serif);
-  font-size: 15.5px;
-  color: var(--muted);
-  line-height: 1.8;
-  text-align: justify;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
-}
-
-/* ─── INSTITUTION FOOTER ─── */
-.institution-note {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--muted);
-  text-align: center;
-  margin-top: 24px;
-  padding: 14px;
-  border-top: 1px dashed var(--line);
-}
-
-.institution-note strong {
   color: var(--navy);
-  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.wip-authors {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--muted);
 }
 
 /* ─── FOOTER ─── */
@@ -403,75 +483,152 @@ body::after {
     <a class="topbar-name" href="index.html">IBNOUZAHIR <span>YOUSSEF</span></a>
     <nav class="topbar-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="teaching.html" class="active">Teaching</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="teaching.html">Teaching</a>
       <a href="cv.pdf" class="cv-btn" download>CV ↓</a>
     </nav>
   </header>
 
   <!-- Page title -->
   <div class="page-header">
-    <p class="page-eyebrow">Academic Activities</p>
-    <h1 class="page-title">Teaching</h1>
+    <p class="page-eyebrow">Academic Work</p>
+    <h1 class="page-title">Research</h1>
     <div class="page-rule"></div>
   </div>
 
-  <!-- Teaching Experience -->
-  <section class="section" aria-labelledby="teaching-title">
+  <!-- PhD Thesis -->
+  <section class="section" aria-labelledby="thesis-title">
     <div class="section-heading">
-      <h2 class="section-title" id="teaching-title">Teaching Experience</h2>
+      <h2 class="section-title" id="thesis-title">PhD Thesis</h2>
     </div>
     <div class="section-line"></div>
 
-    <div class="intro-box">
-      <div class="intro-label">Overview</div>
-      <p class="intro-text">
-        I am passionate about sharing economic knowledge and have recently contributed to undergraduate instruction at the Faculty of Legal, Economic and Social Sciences in Mohammedia.
-      </p>
+    <div class="thesis-box">
+      <div class="thesis-label">Doctoral Research</div>
+      <div class="thesis-title">Monetary Policy in the Context of Central Bank Independence: An Econometric Study.</div>
+      <ul class="thesis-list">
+        <li>In-depth analysis of macroeconomic policies, including fiscal and monetary interventions.</li>
+        <li>Development of advanced models to assess the effectiveness of monetary policy in various economic contexts.</li>
+        <li>Empirical analysis of monetary policy frameworks, transmission mechanisms, and central bank responses to economic shocks, as well as their implications for inflation control and macroeconomic stability.</li>
+        <li>Evaluation of the effectiveness of monetary policy instruments in promoting macroeconomic stability and managing inflation.</li>
+        <li>Analysis of legal and de facto central bank independence, and assessment of its role in strengthening policy credibility, enhancing transmission mechanisms, and improving the effectiveness of monetary policy in achieving central bank objectives.</li>
+      </ul>
     </div>
   </section>
 
-  <!-- Courses -->
-  <section class="section" aria-labelledby="courses-title">
+  <!-- Published Papers -->
+  <section class="section" aria-labelledby="papers-title">
     <div class="section-heading">
-      <h2 class="section-title" id="courses-title">Courses</h2>
+      <h2 class="section-title" id="papers-title">Published Papers</h2>
     </div>
     <div class="section-line"></div>
 
-    <div class="courses-list">
+    <div class="papers-list">
 
-      <div class="course-card" style="animation-delay:0.1s">
-        <div class="course-meta">
-          <span class="course-year">2026</span>
-          <span class="course-level">Bachelor's · Semester 6</span>
-          <span class="course-role">Lead Instructor — Lectures &amp; Tutorials</span>
+      <div class="paper-card" style="animation-delay:0.1s">
+        <div class="paper-meta">
+          <span class="paper-year">2026</span>
+          <span class="paper-authors">IBNOUZAHIR Youssef &amp; HEFNAOUI Ahmed</span>
         </div>
-        <div class="course-title">
-          Advanced Macroeconomics — Econometrics Track
+        <div class="paper-title">
+          <a href="https://www.ectap.ro/shockwaves-abroad-and-the-vulnerability-of-monetary-policy-moroccos-central-bank-response-to-geopolitical-shocks-and-commodity-price-volatility-youssef-ibnouzahir_ahmed-hefnaoui/a1901/" target="_blank" rel="noopener">
+            Shockwaves abroad and the vulnerability of monetary policy: Morocco's central bank response to geopolitical shocks and commodity price volatility.
+          </a>
         </div>
-        <p class="course-description">
-          This course focuses on advanced macroeconomic dynamics, building on students' analytical and econometric foundations. Topics include modern macroeconomic modeling, dynamic stochastic frameworks, and applied econometric methods for policy analysis.
-        </p>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false">
+          <span class="toggle-icon">▶</span> Abstract
+        </button>
+        <div class="paper-abstract">
+          This paper investigates the transmission mechanisms of geopolitical risk and commodity price volatility to Morocco's monetary policy and assesses the central bank's response to externally driven inflationary pressures. Using monthly data from 1995–2025, a Bayesian Vector Autoregression (BVAR) model comprising six macroeconomic variables is estimated. The results indicate that shocks to geopolitical risk, crude oil, and cereal prices exert persistent inflationary effects through imported inflation channels. The policy rate responds with a lag, consistent with its periodic decision-making framework, underscoring the structural constraints faced by monetary authorities in managing externally induced inflation and requiring fiscal coordination and targeted supply-side measures.
+        </div>
       </div>
 
-      <div class="course-card" style="animation-delay:0.15s">
-        <div class="course-meta">
-          <span class="course-year">2026</span>
-          <span class="course-level">Bachelor's · Semester 4</span>
-          <span class="course-role">Instructor — Tutorial Sessions</span>
+      <div class="paper-card" style="animation-delay:0.15s">
+        <div class="paper-meta">
+          <span class="paper-year">2026</span>
+          <span class="paper-authors">IBNOUZAHIR Youssef &amp; HEFNAOUI Ahmed</span>
         </div>
-        <div class="course-title">
-          Monetary and Financial Economics — Common Core
+        <div class="paper-title">
+          <a href="https://jurnal.umt.ac.id/index.php/jceb/article/view/15836" target="_blank" rel="noopener">
+            De Jure or De Facto Central Bank Independence? What Truly Curbs Inflation in Morocco: Evidence from Bank Al-Maghrib.
+          </a>
         </div>
-        <p class="course-description">
-          This module introduces students to the fundamentals of monetary theory, central banking, and financial market operations. The tutorials emphasize practical understanding of monetary policy instruments, financial intermediation, and the institutional architecture of modern financial systems.
-        </p>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false">
+          <span class="toggle-icon">▶</span> Abstract
+        </button>
+        <div class="paper-abstract">
+          Amid increasing concerns about inflationary pressures and institutional reforms in emerging economies, understanding the effectiveness of central bank independence has become particularly crucial. This study aims to evaluate the extent to which de jure and de facto central bank independence contribute to inflation control in Morocco, with particular emphasis on the roles of legal autonomy and governor stability in shaping monetary outcomes. Using annual data from 1988 to 2024, de jure independence is measured using a PCA-based synthetic index, while de facto independence is proxied by governor turnover. The relationship between independence and money supply growth, used as an indirect channel of inflation, is examined using an Autoregressive Distributed Lag (ARDL) model to capture both short- and long-run dynamics. The findings reveal a long-run cointegrating relationship among money supply, legal independence, and turnover. De jure independence significantly reduces long-run monetary expansion, whereas governor turnover affects only short-run monetary tightening.
+        </div>
+      </div>
+
+      <div class="paper-card" style="animation-delay:0.2s">
+        <div class="paper-meta">
+          <span class="paper-year">2026</span>
+          <span class="paper-authors">IBNOUZAHIR Youssef, HERRAZ Ismail, BASSITE Imad, ELKHATTAB Younes, HEFNAOUI Ahmed</span>
+        </div>
+        <div class="paper-title">
+          <a href="https://www.utgjiu.ro/revista/?page=curent&nr=2025-06" target="_blank" rel="noopener">
+            Okun's law and Phillips curve revisited: Nonlinear evidence from the Moroccan economy.
+          </a>
+        </div>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false">
+          <span class="toggle-icon">▶</span> Abstract
+        </button>
+        <div class="paper-abstract">
+          This study examines the validity of Okun's Law and the Phillips Curve in Morocco within a nonlinear framework, aiming to explain persistent unemployment despite sustained growth. Using annual data from 1981–2024 applying NARDL models, the analysis reveals asymmetric relationships among investment, inflation, growth, and unemployment. Negative shocks in investment and output significantly raise unemployment, while positive shocks yield weaker effects, confirming partial validity of Okun's Law but rejecting the Phillips Curve. Results highlight Morocco's structural rigidities and suggest policy measures promoting inclusive, labor-intensive investment and countercyclical strategies to mitigate adverse shocks and foster sustainable employment.
+        </div>
+      </div>
+
+      <div class="paper-card" style="animation-delay:0.25s">
+        <div class="paper-meta">
+          <span class="paper-year">2025</span>
+          <span class="paper-authors">HEFNAOUI Ahmed, ELKHATTAB Younes, BASSITE Imad, IBNOUZAHIR Youssef</span>
+        </div>
+        <div class="paper-title">
+          <a href="https://hal.science/hal-05175083" target="_blank" rel="noopener">
+            The Resilience of the Moroccan Economy Under Budgetary and Monetary Coordination: A Modeling Approach Using R Studio.
+          </a>
+        </div>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false">
+          <span class="toggle-icon">▶</span> Abstract
+        </button>
+        <div class="paper-abstract">
+          The objective of this study is to analyze the impact of the Policy-mix on Morocco's economic resilience by assessing the coordination between monetary and fiscal policies. The econometric approach relies on an SVAR model to examine the effects of fiscal and monetary instruments on key macroeconomic variables. The results indicate that monetary policy, particularly through inflation control, plays a crucial role in economic stabilization, while the impact of public spending on economic resilience appears more mixed. Impulse response functions reveal a negative reaction of resilience to inflationary and monetary shocks, as well as a limited influence of public spending on economic stability. Variance decomposition shows that inflation is primarily driven by money supply, whereas economic resilience is more influenced by fiscal policy.
+        </div>
+      </div>
+
+      <div class="paper-card" style="animation-delay:0.3s">
+        <div class="paper-meta">
+          <span class="paper-year">2024</span>
+          <span class="paper-authors">HEFNAOUI Ahmed &amp; IBNOUZAHIR Youssef</span>
+        </div>
+        <div class="paper-title">
+          <a href="http://www.afrsj.com/index.php/AfricanScientificJournal/article/view/899" target="_blank" rel="noopener">
+            Effectiveness of Monetary Policy after the Adoption of Inflation Targeting: The Case of Bank Al-Maghrib.
+          </a>
+        </div>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false">
+          <span class="toggle-icon">▶</span> Abstract
+        </button>
+        <div class="paper-abstract">
+          This study assesses the effectiveness of Morocco's monetary policy following the adoption of inflation targeting in 2006. The objective is to evaluate whether this strategy has stabilized inflation and supported economic growth. The methodology is based on a VAR model using quarterly data from 2007 to 2023, with Granger causality tests and impulse response functions to capture the simultaneous effects between monetary variables. The results indicate that inflation in Morocco is driven by shocks to the exchange rate and money supply, while the effect of the policy rate remains limited. Although monetary interventions have short-term effectiveness, their moderate impact suggests the need for structural reforms to enhance inflation targeting efficiency.
+        </div>
       </div>
 
     </div>
+  </section>
 
-    <div class="institution-note">
-      <strong>Faculty of Legal, Economic and Social Sciences</strong> — Mohammedia, Morocco
+  <!-- Work in Progress -->
+  <section class="section" aria-labelledby="wip-title">
+    <div class="section-heading">
+      <h2 class="section-title" id="wip-title">Work in Progress</h2>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="wip-card">
+      <div class="wip-badge">Paper</div>
+      <div class="wip-title">Are Emerging Economies Subject to an Insulation Puzzle under Partially Flexible Exchange Rate when Facing External Shocks? Evidence from Morocco.</div>
+      <div class="wip-authors">MOUTMIHI Mohamed, EL YAMANI Rachida, IBNOUZAHIR Youssef</div>
     </div>
   </section>
 
@@ -480,12 +637,22 @@ body::after {
     <span>© 2026 IBNOUZAHIR YOUSSEF</span>
     <nav class="footer-links" aria-label="Footer links">
       <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
       <a href="cv.pdf" download>CV</a>
     </nav>
   </footer>
 
 </div>
 
+<script>
+function toggleAbstract(btn) {
+  const abstract = btn.nextElementSibling;
+  const icon = btn.querySelector('.toggle-icon');
+  const isOpen = abstract.classList.contains('open');
+  abstract.classList.toggle('open', !isOpen);
+  icon.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+</script>
 </body>
 </html>
