@@ -16,17 +16,13 @@ html {
   background: linear-gradient(135deg, #eef6ff 0%, #d8e9fa 45%, #f6fbff 100%);
 }
 
+html {
+  min-height: 100%;
+  background: linear-gradient(135deg, #f0f6ff 0%, #d6e8fa 40%, #eaf3ff 70%, #c8ddf5 100%);
+}
+
 html::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("macro_background_svg.svg");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  opacity: 1; /* déjà géré dans le SVG lui-même */
-  pointer-events: none;
-  z-index: -1;
+  display: none;
 }
     html::after {
   content: "";
