@@ -15,10 +15,10 @@
   --mid:   #1a5276;
   --sky:   #2e86c1;
   --ice:   #d6eaf8;
-  --paper: #f5f7fa;
+  --paper: #f8f9fb;
   --text:  #1c2b3a;
   --muted: #5d7a8c;
-  --line:  rgba(11,45,78,0.13);
+  --line:  rgba(11,45,78,0.10);
   --serif: 'EB Garamond', Georgia, serif;
   --sans:  'DM Sans', system-ui, sans-serif;
 }
@@ -36,14 +36,21 @@ body {
   overflow-x: hidden;
 }
 
+/* ═══════════════════════════════════════════
+   ELEGANT BACKGROUND
+   Layered ambient light + fine paper grain
+   ═══════════════════════════════════════════ */
+
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(11,45,78,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11,45,78,0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background:
+    radial-gradient(ellipse 80% 60% at 5% 0%,   rgba(46,134,193,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 45% at 95% 5%,   rgba(11,45,78,0.05) 0%, transparent 45%),
+    radial-gradient(ellipse 60% 50% at 85% 90%,  rgba(46,134,193,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 40% at 10% 95%,  rgba(11,45,78,0.04) 0%, transparent 40%),
+    radial-gradient(ellipse 35% 35% at 50% 45%,  rgba(214,234,248,0.12) 0%, transparent 45%);
   pointer-events: none;
   z-index: 0;
 }
@@ -52,11 +59,12 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 15% 10%, rgba(46,134,193,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 90% 85%, rgba(11,45,78,0.04) 0%, transparent 55%);
+  opacity: 0.28;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
   pointer-events: none;
   z-index: 0;
+  mix-blend-mode: multiply;
 }
 
 .bg-equations {
@@ -70,7 +78,7 @@ body::after {
   position: absolute;
   font-family: var(--serif);
   font-style: italic;
-  color: rgba(11,45,78,0.04);
+  color: rgba(11,45,78,0.045);
   white-space: nowrap;
   animation: floatEq 28s ease-in-out infinite;
   user-select: none;
@@ -83,8 +91,8 @@ body::after {
 .eq:nth-child(6) { top: 88%; left: 20%; font-size: 16px; animation-delay: -10s; animation-duration: 35s; }
 @keyframes floatEq {
   0%,100% { transform: translateY(0) translateX(0); }
-  33%      { transform: translateY(-14px) translateX(6px); }
-  66%      { transform: translateY(8px) translateX(-4px); }
+  33%      { transform: translateY(-12px) translateX(5px); }
+  66%      { transform: translateY(6px) translateX(-3px); }
 }
 
 /* ─── LAYOUT ─── */
@@ -181,7 +189,7 @@ body::after {
 .page-rule {
   height: 2px;
   width: 100%;
-  background: linear-gradient(90deg, var(--navy), var(--sky));
+  background: linear-gradient(90deg, var(--navy), var(--sky), transparent);
   border-radius: 1px;
   margin: 14px 0 0;
 }
@@ -211,8 +219,8 @@ body::after {
 
 .section-line {
   display: block;
-  height: 2px;
-  background: linear-gradient(90deg, var(--navy), var(--sky));
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--navy), var(--sky), transparent);
   border-radius: 1px;
   margin: 6px 0 24px 0;
 }
@@ -222,9 +230,10 @@ body::after {
   background: #fff;
   border: 1px solid var(--line);
   border-left: 3px solid var(--sky);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 20px 24px;
   margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(11,45,78,0.04);
 }
 
 .thesis-label {
@@ -283,12 +292,13 @@ body::after {
 .paper-card {
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 20px 24px;
   transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
   animation: fadeIn 0.9s ease both;
+  box-shadow: 0 1px 4px rgba(11,45,78,0.04);
 }
 
 .paper-card::before {
@@ -303,8 +313,8 @@ body::after {
 }
 
 .paper-card:hover {
-  border-color: rgba(46,134,193,0.3);
-  box-shadow: 0 4px 16px rgba(11,45,78,0.07);
+  border-color: rgba(46,134,193,0.25);
+  box-shadow: 0 6px 24px rgba(11,45,78,0.06);
   transform: translateX(3px);
 }
 
@@ -356,7 +366,6 @@ body::after {
   text-decoration: underline;
 }
 
-/* Abstract — collapsed by default, expand on click */
 .paper-abstract {
   font-family: var(--serif);
   font-size: 15.5px;
@@ -402,8 +411,9 @@ body::after {
   background: #fff;
   border: 1px solid var(--line);
   border-left: 3px solid rgba(46,134,193,0.35);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 20px 24px;
+  box-shadow: 0 1px 4px rgba(11,45,78,0.04);
 }
 
 .wip-badge {
@@ -478,7 +488,6 @@ body::after {
 
 <div class="page">
 
-  <!-- Nav -->
   <header class="topbar">
     <a class="topbar-name" href="index.html">IBNOUZAHIR <span>YOUSSEF</span></a>
     <nav class="topbar-nav" aria-label="Main navigation">
@@ -489,7 +498,6 @@ body::after {
     </nav>
   </header>
 
-  <!-- Page title -->
   <div class="page-header">
     <p class="page-eyebrow">Academic Work</p>
     <h1 class="page-title">Research</h1>
@@ -632,7 +640,6 @@ body::after {
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <span>© 2026 IBNOUZAHIR YOUSSEF</span>
     <nav class="footer-links" aria-label="Footer links">
