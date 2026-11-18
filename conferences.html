@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conferences — Ibnouzahir Youssef</title>
+<meta name="description" content="Conferences page of Ibnouzahir Youssef — oral presentations at international conferences in Morocco and abroad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:  #0b2d4e;
+  --mid:   #1a5276;
+  --sky:   #2e86c1;
+  --ice:   #d6eaf8;
+  --paper: #f8f9fb;
+  --text:  #1c2b3a;
+  --muted: #5d7a8c;
+  --line:  rgba(11,45,78,0.10);
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { min-height: 100%; }
+
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text);
+  background: var(--paper);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════
+   ELEGANT BACKGROUND
+   Layered ambient light + fine paper grain
+   ═══════════════════════════════════════════ */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 5% 0%,   rgba(46,134,193,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 45% at 95% 5%,   rgba(11,45,78,0.05) 0%, transparent 45%),
+    radial-gradient(ellipse 60% 50% at 85% 90%,  rgba(46,134,193,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 40% at 10% 95%,  rgba(11,45,78,0.04) 0%, transparent 40%),
+    radial-gradient(ellipse 35% 35% at 50% 45%,  rgba(214,234,248,0.12) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.28;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+
+.bg-equations {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.eq {
+  position: absolute;
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(11,45,78,0.045);
+  white-space: nowrap;
+  animation: floatEq 28s ease-in-out infinite;
+  user-select: none;
+}
+.eq:nth-child(1) { top: 8%;  left: 3%;  font-size: 18px; animation-delay: 0s;   animation-duration: 30s; }
+.eq:nth-child(2) { top: 22%; right: 4%; font-size: 15px; animation-delay: -8s;  animation-duration: 25s; }
+.eq:nth-child(3) { top: 55%; left: 2%;  font-size: 14px; animation-delay: -14s; animation-duration: 32s; }
+.eq:nth-child(4) { top: 75%; right: 3%; font-size: 17px; animation-delay: -5s;  animation-duration: 27s; }
+.eq:nth-child(5) { top: 40%; left: 60%; font-size: 13px; animation-delay: -18s; animation-duration: 22s; }
+.eq:nth-child(6) { top: 88%; left: 20%; font-size: 16px; animation-delay: -10s; animation-duration: 35s; }
+@keyframes floatEq {
+  0%,100% { transform: translateY(0) translateX(0); }
+  33%      { transform: translateY(-12px) translateX(5px); }
+  66%      { transform: translateY(6px) translateX(-3px); }
+}
+
+/* ─── LAYOUT ─── */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+}
+
+/* ─── TOP NAV ─── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0 0;
+  margin-bottom: 52px;
+}
+
+.topbar-name {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+}
+.topbar-name span { color: var(--sky); }
+.topbar-name:hover { opacity: 0.8; }
+
+.topbar-nav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.topbar-nav a {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--mid);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.topbar-nav a:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.topbar-nav a.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.topbar-nav a.cv-btn {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.topbar-nav a.cv-btn:hover {
+  background: var(--sky);
+  border-color: var(--sky);
+}
+
+/* ─── PAGE TITLE ─── */
+.page-header {
+  margin-bottom: 48px;
+  animation: fadeIn 0.9s ease both;
+}
+
+.page-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 8px;
+}
+
+.page-title {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+.page-rule {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--navy), var(--sky), transparent);
+  border-radius: 1px;
+  margin: 14px 0 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SECTION ─── */
+.section {
+  margin-bottom: 52px;
+  animation: fadeIn 0.9s ease 0.1s both;
+}
+
+.section-heading {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.1px;
+}
+
+.section-line {
+  display: block;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--navy), var(--sky), transparent);
+  border-radius: 1px;
+  margin: 6px 0 24px 0;
+}
+
+/* ─── CONFERENCE CARDS ─── */
+.conf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.conf-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  animation: fadeIn 0.9s ease both;
+  box-shadow: 0 1px 4px rgba(11,45,78,0.04);
+}
+.conf-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--navy), var(--sky));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+.conf-card:hover {
+  border-color: rgba(46,134,193,0.25);
+  box-shadow: 0 6px 24px rgba(11,45,78,0.06);
+  transform: translateX(3px);
+}
+.conf-card:hover::before { transform: scaleY(1); }
+
+.conf-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.flag {
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(11,45,78,0.12);
+  flex-shrink: 0;
+}
+.conf-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+}
+.conf-date {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--navy);
+  padding: 2px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+.conf-format {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--ice);
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+.conf-name {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 2px;
+}
+.conf-org {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.conf-talk {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.conf-badge {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 4px;
+}
+.conf-title {
+  font-family: var(--serif);
+  font-size: 16.5px;
+  font-style: italic;
+  color: var(--mid);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+.conf-authors {
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.conf-name a {
+  color: var(--navy);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.conf-name a:hover { color: var(--sky); text-decoration: underline; }
+
+/* ─── FOOTER ─── */
+.site-footer {
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: var(--muted);
+  font-family: var(--sans);
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--navy); }
+
+@media (max-width: 580px) {
+  .topbar { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .page-title { font-size: 32px; }
+  .topbar-nav { flex-wrap: wrap; }
+  .site-footer { flex-direction: column; gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-equations" aria-hidden="true">
+  <span class="eq">π = βE[π] + κx + ε</span>
+  <span class="eq">i = r* + π + φ(π − π*) + φ·ŷ</span>
+  <span class="eq">ΔY = α + βΔM + γΔG + ε</span>
+  <span class="eq">dCBI/dt = f(Δπ, Δi, ΔM)</span>
+  <span class="eq">E(π) = π + θ·ε</span>
+  <span class="eq">BVAR: Y = Σ AᵢY_{t−i} + ε</span>
+</div>
+
+<div class="page">
+
+  <header class="topbar">
+    <a class="topbar-name" href="index.html">IBNOUZAHIR <span>YOUSSEF</span></a>
+    <nav class="topbar-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="conferences.html" class="active">Conferences</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="cv.pdf" class="cv-btn" download>CV ↓</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1 class="page-title">Conferences</h1>
+    <div class="page-rule"></div>
+  </div>
+
+
+  <!-- International Conferences -->
+  <section class="section" aria-labelledby="intl-title">
+    <div class="section-heading">
+      <h2 class="section-title" id="intl-title">International Conferences Abroad</h2>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="conf-list">
+
+      <article class="conf-card" style="animation-delay:0.10s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Tunisia"><rect width="30" height="20" fill="#E70013"/><circle cx="15" cy="10" r="5" fill="#fff"/><circle cx="15" cy="10" r="3.75" fill="#E70013"/><circle cx="15.95" cy="10" r="3" fill="#fff"/><polygon points="16.35,8.10 16.79,9.39 18.16,9.41 17.06,10.23 17.47,11.54 16.35,10.75 15.23,11.54 15.64,10.23 14.54,9.41 15.91,9.39" fill="#E70013"/></svg><span>Hammamet, Tunisia</span></span>
+          <span class="conf-date">July 16–17, 2026</span>
+          <span class="conf-format">Hybrid</span>
+        </div>
+        <h3 class="conf-name">5th International Conference on Quantitative and Qualitative Research (ICQQR 2026)</h3>
+        <p class="conf-org">Moroccan Journal of Quantitative and Qualitative Research (MJQR) &amp; Moroccan Association for Applied Sciences and Innovation (MAASI)</p>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“Are emerging economies subject to an insulation puzzle under partially flexible exchange rate when facing external shocks? Evidence from Morocco.”</p>
+          <p class="conf-authors">MOUTMIHI Mohamed, EL YAMANI Rachida &amp; IBNOUZAHIR Youssef</p>
+        </div>
+      </article>
+
+      <article class="conf-card" style="animation-delay:0.15s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="France"><rect width="10" height="20" fill="#002395"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ED2939"/></svg><span>Montpellier, France</span></span>
+          <span class="conf-date">May 29, 2026</span>
+        </div>
+        <h3 class="conf-name">5th Journée d’Économétrie Appliquée Michel Terraza</h3>
+        <p class="conf-org">Faculty of Economics, University of Montpellier</p>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“Transmission des chocs géopolitiques et des prix des matières premières : une analyse en BVAR hiérarchique appliquée au Maroc.”</p>
+          <p class="conf-authors">IBNOUZAHIR Youssef &amp; HEFNAOUI Ahmed</p>
+        </div>
+      </article>
+
+      <article class="conf-card" style="animation-delay:0.20s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="France"><rect width="10" height="20" fill="#002395"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ED2939"/></svg><span>Strasbourg, France</span></span>
+          <span class="conf-date">May 11–12, 2026</span>
+        </div>
+        <h3 class="conf-name" style="margin-bottom:14px">Augustin Cournot Doctoral Days (ACDD 2026)</h3>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“Are Emerging Economies Subject to an Insulation Puzzle under Flexible Exchange Rates when Facing External Shocks? Evidence from Morocco.”</p>
+          <p class="conf-authors">IBNOUZAHIR Youssef</p>
+        </div>
+      </article>
+
+      <article class="conf-card" style="animation-delay:0.25s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="France"><rect width="10" height="20" fill="#002395"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ED2939"/></svg><span>Marseille, France</span></span>
+          <span class="conf-date">May 22–23, 2025</span>
+        </div>
+        <h3 class="conf-name">2025 Conference in Applied Econometrics using Stata, France</h3>
+        <p class="conf-org">Aix-Marseille School of Economics (AMSE), Aix-Marseille University</p>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“The resilience of Moroccan economy under fiscal and monetary coordination: a modelling attempt using Stata.”</p>
+          <p class="conf-authors">IBNOUZAHIR Youssef</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- International Conferences in Morocco -->
+  <section class="section" aria-labelledby="ma-title">
+    <div class="section-heading">
+      <h2 class="section-title" id="ma-title">International Conferences in Morocco</h2>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="conf-list">
+
+      <article class="conf-card" style="animation-delay:0.10s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Morocco"><rect width="30" height="20" fill="#C1272D"/><polygon points="15.00,6.20 17.47,13.80 11.01,9.10 18.99,9.10 12.53,13.80" fill="none" stroke="#006233" stroke-width="1" stroke-linejoin="miter"/></svg><span>Mohammedia, Morocco</span></span>
+          <span class="conf-date">April 30, 2026</span>
+        </div>
+        <h3 class="conf-name"><a href="https://fsjesm.ma/2026/02/10/appel-a-communication-de-la-3eme-edition-du-colloque-international-sous-le-theme-financement-de-developpement-et-politiques-macroeconomies-de-lutte-contre-la-pauvrete-multidimensionnelle/" target="_blank" rel="noopener">3rd International Colloquium “Les sources de financement de l’économie” — Financement de développement et politiques macroéconomiques de lutte contre la pauvreté multidimensionnelle (SFE)</a></h3>
+        <p class="conf-org">Faculty of Legal, Economic and Social Sciences – Mohammedia, Hassan II University of Casablanca</p>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“Chocs géopolitiques, inflation et pouvoir d’achat : quelles limites pour la politique monétaire au Maroc ?”</p>
+          <p class="conf-authors">IBNOUZAHIR Youssef &amp; HEFNAOUI Ahmed</p>
+        </div>
+      </article>
+
+      <article class="conf-card" style="animation-delay:0.15s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Morocco"><rect width="30" height="20" fill="#C1272D"/><polygon points="15.00,6.20 17.47,13.80 11.01,9.10 18.99,9.10 12.53,13.80" fill="none" stroke="#006233" stroke-width="1" stroke-linejoin="miter"/></svg><span>Mohammedia, Morocco</span></span>
+          <span class="conf-date">December 25, 2025</span>
+        </div>
+        <h3 class="conf-name"><a href="https://fsjesm.ma/2025/12/25/the-2nd-international-conference-on-research-in-statistics-and-applied-economics-2025/" target="_blank" rel="noopener">International Conference on Research in Statistics and Applied Economics (ICRSAE’2025)</a></h3>
+        <p class="conf-org">Faculty of Legal, Economic and Social Sciences – Mohammedia, Hassan II University of Casablanca</p>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“Shockwaves Abroad and the Vulnerability of Monetary Policy: Morocco’s Central Bank Response to Geopolitical Shocks and Commodity Price Volatility – A Bayesian VAR Approach.”</p>
+          <p class="conf-authors">IBNOUZAHIR Youssef &amp; HEFNAOUI Ahmed</p>
+        </div>
+      </article>
+
+      <article class="conf-card" style="animation-delay:0.20s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Morocco"><rect width="30" height="20" fill="#C1272D"/><polygon points="15.00,6.20 17.47,13.80 11.01,9.10 18.99,9.10 12.53,13.80" fill="none" stroke="#006233" stroke-width="1" stroke-linejoin="miter"/></svg><span>Casablanca, Morocco</span></span>
+          <span class="conf-date">December 20, 2025</span>
+        </div>
+        <h3 class="conf-name"><a href="https://icmdem-et-25.sciencesconf.org/" target="_blank" rel="noopener">International Conference on Modeling and Decision Making in Economics and Management in the Era of Transitions (ICMDEM)</a></h3>
+        <p class="conf-org">Faculty of Legal, Economic and Social Sciences – Aïn Sebaâ, Hassan II University of Casablanca</p>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“The Vulnerability of Monetary Policy: Morocco’s Central Bank Response to Geopolitical Shocks and Commodity Price Volatility.”</p>
+          <p class="conf-authors">IBNOUZAHIR Youssef &amp; HEFNAOUI Ahmed</p>
+        </div>
+      </article>
+
+      <article class="conf-card" style="animation-delay:0.25s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Morocco"><rect width="30" height="20" fill="#C1272D"/><polygon points="15.00,6.20 17.47,13.80 11.01,9.10 18.99,9.10 12.53,13.80" fill="none" stroke="#006233" stroke-width="1" stroke-linejoin="miter"/></svg><span>Mohammedia, Morocco</span></span>
+          <span class="conf-date">May 22–23, 2025</span>
+        </div>
+        <h3 class="conf-name"><a href="https://www.facebook.com/100092425628877/posts/appel-%C3%A0-communication-le-laboratoire-de-recherche-performance-%C3%A9conomique-et-logi/521364230954427/" target="_blank" rel="noopener">Résilience économique au Maroc : facteurs clés et perspectives d’avenir (REPA)</a></h3>
+        <p class="conf-org">Faculty of Legal, Economic and Social Sciences – Mohammedia, Hassan II University of Casablanca</p>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“La résilience de l’économie marocaine sous la coordination budgétaire et monétaire : essai de modélisation sous R Studio.”</p>
+          <p class="conf-authors">HEFNAOUI Ahmed, ELKHATTAB Younes, BASSITE Imad &amp; IBNOUZAHIR Youssef</p>
+        </div>
+      </article>
+
+      <article class="conf-card" style="animation-delay:0.30s">
+        <div class="conf-meta">
+          <span class="conf-place"><svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Morocco"><rect width="30" height="20" fill="#C1272D"/><polygon points="15.00,6.20 17.47,13.80 11.01,9.10 18.99,9.10 12.53,13.80" fill="none" stroke="#006233" stroke-width="1" stroke-linejoin="miter"/></svg><span>Mohammedia, Morocco</span></span>
+          <span class="conf-date">July 3, 2024</span>
+        </div>
+        <h3 class="conf-name"><a href="https://fsjes.pel.ma" target="_blank" rel="noopener">IA et Data en Finance, Management et Droit : entre réalités, opportunités et l’usage responsable de l’apprentissage automatique (IADFMD)</a></h3>
+        <p class="conf-org">Faculty of Legal, Economic and Social Sciences – Mohammedia, Hassan II University of Casablanca</p>
+        <div class="conf-talk">
+          <span class="conf-badge">Oral presentation</span>
+          <p class="conf-title">“IA et marché du travail : l’impact de l’intelligence artificielle sur l’emploi.”</p>
+          <p class="conf-authors">HEFNAOUI Ahmed &amp; IBNOUZAHIR Youssef</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span>© 2026 IBNOUZAHIR YOUSSEF</span>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="cv.pdf" download>CV</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>
