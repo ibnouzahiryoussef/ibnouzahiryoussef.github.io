@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Research — Ibnouzahir Youssef</title>
-<meta name="description" content="Research page of Ibnouzahir Youssef — publications, PhD thesis, and work in progress.">
+<meta name="description" content="Research page of Ibnouzahir Youssef — publications, book chapters, and PhD thesis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -406,6 +406,15 @@ body::after {
 
 .toggle-icon.open { transform: rotate(90deg); }
 
+.paper-book {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: -6px 0 12px;
+}
+.paper-book em { color: var(--text); }
+
 /* ─── WORK IN PROGRESS ─── */
 .wip-card {
   background: #fff;
@@ -644,6 +653,39 @@ body::after {
     </div>
   </section>
 
+
+  <!-- Book Chapters -->
+  <section class="section" aria-labelledby="chapters-title">
+    <div class="section-heading">
+      <h2 class="section-title" id="chapters-title">Book Chapters</h2>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="papers-list">
+
+      <div class="paper-card" style="animation-delay:0.1s">
+        <div class="paper-meta">
+          <span class="paper-year">ANNÉE</span>
+          <span class="paper-authors">HEFNAOUI Ahmed &amp; IBNOUZAHIR Youssef</span>
+        </div>
+        <div class="paper-title">
+          <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:a7ef0d0d-89cc-414f-91c3-635118372f3c?viewer%21megaVerb=group-discover" target="_blank" rel="noopener">
+            Analyse économétrique de la transmission de la politique monétaire au Maroc après l'indépendance de Bank Al-Maghrib.
+          </a>
+        </div>
+        <div class="paper-book">
+          In: <em>Regards croisés sur l’environnement macroéconomique marocain : Analyse quantitative</em>, Chapter 7.
+        </div>
+        <button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false">
+          <span class="toggle-icon">▶</span> Abstract
+        </button>
+        <div class="paper-abstract">
+          The objective of this study is to analyze the effectiveness of monetary policy mechanisms in Morocco, particularly after the institutional independence of Bank Al-Maghrib in 2006. The econometric approach adopted relies on the use of the SVAR model to assess the impact of monetary instruments on key macroeconomic variables. The results indicate that the central bank independence has strengthened price stability by reducing inflation volatility in the short term, while the long term saw a limit to transmission. Impulse response functions show that the transmission channels significantly influence the economy, with an immediate effect on the money supply and a gradual modulation of economic growth. However, structural vulnerabilities persist, limiting the effectiveness of monetary policy in an economic context marked by external shocks. The study concludes on the importance of a monetary policy based on clear rules to strengthen economic resilience.
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <footer class="site-footer">
     <span>© 2026 IBNOUZAHIR YOUSSEF</span>
